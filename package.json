@@ -1,0 +1,11 @@
+{
+  "name": "woe-love",
+  "version": "1.0.0",
+  "description": "custom person module",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "azcraze",
+  "license": "MIT"
+}
