@@ -1,6 +1,6 @@
 {
   "name": "woe-love",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "custom personal module",
   "main": "index.js",
   "files": [
