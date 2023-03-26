@@ -1,8 +1,13 @@
 {
   "name": "woe-love",
-  "version": "1.0.1",
-  "description": "custom person module",
+  "version": "1.0.0",
+  "description": "custom personal module",
   "main": "index.js",
+  "files": [
+    "README.md",
+    ".gitignore",
+    "package-lock.json"
+  ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
