@@ -3,12 +3,27 @@
   "version": "1.0.0",
   "description": "custom person module",
   "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
-    "test": "cfonts 'woe\nlove' -f simple3d -a right -z 0 -m 4 -l 0 -g '#FF3DFA','#D596FF','#00FDFD','#3C5EF6','#4F18E6' -t && cfonts 'o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o ' -f console -a right -z 0 -l 0 -g '#FF3DFA','#D596FF','#00FDFD','#3C5EF6','#4F18E6' -t"
+    "commit": "git add . && git commit",
+    "test": "cfonts 'woe\nlove' -f simple3d -a right -z 0 -m 4 -l 0 -g '#FF3DFA','#D596FF','#00FDFD','#3C5EF6','#4F18E6' -t && cfonts 'o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o ' -f console -a right -z 0 -l 0 -g '#FF3DFA','#D596FF','#00FDFD','#3C5EF6','#4F18E6' -t",
+    "deploy": "np"
   },
   "author": "azcraze",
   "license": "MIT",
   "devDependencies": {
     "dotenv": "^16.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azcraze/woe-love.git",
+  "np": {
+		"yarn": false,
+		"contents": ".",
+    "branch": "main",
+    "message": "Release %s"
+	}
+}
 }
