@@ -1,6 +1,6 @@
 {
   "name": "woe-love",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "custom person module",
   "main": "index.js",
   "publishConfig": {
@@ -19,11 +19,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/azcraze/woe-love.git",
-  "np": {
-		"yarn": false,
-		"contents": ".",
-    "branch": "main",
-    "message": "Release %s"
-	}
-}
+    "np": {
+      "yarn": false,
+      "contents": ".",
+      "branch": "main",
+      "message": "Release %s"
+    }
+  }
 }
