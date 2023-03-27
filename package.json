@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "commit": "git-cz",
-    "semantic-release": "semantic-release"
+    "release": "dotenv -e .env -- semantic-release"
   },
   "release": {
     "path": "./releaserc.js",
