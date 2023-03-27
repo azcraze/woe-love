@@ -1,12 +1,19 @@
 {
   "name": "woe-love",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "custom person module",
   "main": "index.js",
   "scripts": {
     "test": "test",
     "commit": "git-cz",
     "semantic-release": "semantic-release"
+  },
+  "release": {
+    "path": "./releaserc.js",
+    "branches": [
+      "main",
+      "develop"
+    ]
   },
   "husky": {
     "hooks": {
@@ -20,58 +27,6 @@
       "czConfig": "./.cz-config.js"
     }
   },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/gitmoji",
-        {
-          "releaseRules": {
-            "🎉": "Initial release",
-            "✨": "Release with new features",
-            "🐛": "Release with bug fixes",
-            "📝": "Release with documentation updates",
-            "🚨": "Release with breaking changes",
-            "🔥": "Release with code removal",
-            "🤖": "Release with automation changes",
-            "👷": "Release with CI/CD changes",
-            "⏪": "Rollback to previous release"
-          }
-        }
-      ],
-      [
-        "@semantic-release/exec",
-        {
-          "prepareCmd": "echo 'Preparing release ${nextRelease.version}'",
-          "successCmd": "echo 'Release ${nextRelease.version} was successful!'",
-          "failCmd": "echo 'Release failed!'"
-        }
-      ],
-      [
-        "@semantic-release/github",
-        {
-          "assets": [
-            {
-              "path": "dist/*.zip",
-              "label": "Zip file"
-            },
-            {
-              "path": "dist/*.tar.gz",
-              "label": "Tarball"
-            }
-          ]
-        }
-      ]
-    ],
-    "preset": "angular",
-    "branches": [
-      "main",
-      "develop"
-    ],
-    "commitMessage": "chore(release): {{nextRelease.version}} [skip ci]\n\n{{#if notes}}{{{notes}}}{{/if}}",
-    "tagFormat": "{{version}}"
-  },
   "author": "azcraze",
   "license": "MIT",
   "devDependencies": {
@@ -79,7 +34,8 @@
     "cz-git": "^1.6.1",
     "cz-gitmoji": "^0.0.7",
     "dotenv": "^16.0.3",
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "semantic-release-gitmoji": "^1.6.3"
   },
   "repository": {
     "type": "git",
