@@ -1,0 +1,2 @@
+#!/bin/sh 
+npx semantic-release --dry-run && git add CHANGELOG.md package.json

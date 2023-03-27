@@ -1,7 +1,7 @@
 {
   "name": "woe-love",
-  "version": "1.0.1",
-  "description": "custom personal module",
+  "version": "0.0.0-development",
+  "description": "custom person module",
   "main": "index.js",
   "files": [
     "README.md",
@@ -12,23 +12,88 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "commit": "git add . && git commit",
-    "test": "cfonts 'woe\nlove' -f simple3d -a right -z 0 -m 4 -l 0 -g '#FF3DFA','#D596FF','#00FDFD','#3C5EF6','#4F18E6' -t && cfonts 'o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o ' -f console -a right -z 0 -l 0 -g '#FF3DFA','#D596FF','#00FDFD','#3C5EF6','#4F18E6' -t",
-    "deploy": "np"
+    "test": "test",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx semantic-release --dry-run && git add CHANGELOG.md package.json"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git",
+      "useEmoji": true,
+      "czConfig": "./.cz-config.js"
+    }
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/gitmoji",
+        {
+          "releaseRules": {
+            "🎉": "Initial release",
+            "✨": "Release with new features",
+            "🐛": "Release with bug fixes",
+            "📝": "Release with documentation updates",
+            "🚨": "Release with breaking changes",
+            "🔥": "Release with code removal",
+            "🤖": "Release with automation changes",
+            "👷": "Release with CI/CD changes",
+            "⏪": "Rollback to previous release"
+          }
+        }
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "echo 'Preparing release ${nextRelease.version}'",
+          "successCmd": "echo 'Release ${nextRelease.version} was successful!'",
+          "failCmd": "echo 'Release failed!'"
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "dist/*.zip",
+              "label": "Zip file"
+            },
+            {
+              "path": "dist/*.tar.gz",
+              "label": "Tarball"
+            }
+          ]
+        }
+      ]
+    ],
+    "preset": "angular",
+    "branches": [
+      "main",
+      "develop"
+    ],
+    "commitMessage": "chore(release): {{nextRelease.version}} [skip ci]\n\n{{#if notes}}{{{notes}}}{{/if}}",
+    "tagFormat": "{{version}}"
   },
   "author": "azcraze",
   "license": "MIT",
   "devDependencies": {
-    "dotenv": "^16.0.3"
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.6.1",
+    "cz-gitmoji": "^0.0.7",
+    "dotenv": "^16.0.3",
+    "husky": "^8.0.3"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/azcraze/woe-love.git",
-    "np": {
-      "yarn": false,
-      "contents": ".",
-      "branch": "main",
-      "message": "Release %s"
-    }
+    "url": "https://github.com/azcraze/woe-love.git"
+  },
+  "dependencies": {
+    "mkabs": "^1.2.4"
   }
 }
