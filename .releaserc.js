@@ -11,10 +11,13 @@ const template = readFileAsync(path.join(TEMPLATE_DIR, 'default-template.hbs'))
 const commitTemplate = readFileAsync(path.join(TEMPLATE_DIR, 'commit-template.hbs'))
 
 module.exports = {
-  'branches': ['main', 'devleop']
+  'branches': ['main', 'devleop'],
   plugins: [
     [
-      'semantic-release-gitmoji', {
+      'semantic-release-gitmoji',
+      "@semantic-release/changelog",
+      {"changelogFile": "CHANGELOG.md"},
+       {
         releaseRules: {
           major: [ ':boom:' ],
           minor: [ ':sparkles:' ],

@@ -6,10 +6,22 @@
   "scripts": {
     "test": "test",
     "commit": "git-cz",
-    "semantic-release": "semantic-release"
+
+    "changelog": "auto-changelog -p --template keepachangelog  --release-summary && git add CHANGELOG.md",
+    "release": "dotenv -e .env -- semantic-release"
+
+
   },
   "release": {
     "path": "./releaserc.js",
+    "plugins": [
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ]
+    ],
     "branches": [
       "main",
       "develop"
@@ -30,6 +42,8 @@
   "author": "azcraze",
   "license": "MIT",
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "auto-changelog": "^2.4.0",
     "commitizen": "^4.3.0",
     "cz-git": "^1.6.1",
     "cz-gitmoji": "^0.0.7",
