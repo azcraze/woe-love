@@ -6,11 +6,8 @@
   "scripts": {
     "test": "test",
     "commit": "git-cz",
-
     "changelog": "auto-changelog -p --template keepachangelog  --release-summary && git add CHANGELOG.md",
     "release": "dotenv -e .env -- semantic-release"
-
-
   },
   "release": {
     "path": "./releaserc.js",
@@ -56,6 +53,10 @@
     "url": "https://github.com/azcraze/woe-love.git"
   },
   "dependencies": {
-    "mkabs": "^1.2.4"
+    "gradient-string": "^2.0.2",
+    "jsome": "^2.5.0",
+    "pretty-error": "^4.0.0",
+    "typy": "^3.3.0",
+    "winston": "^3.8.2"
   }
 }
