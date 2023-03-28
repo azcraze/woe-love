@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "commit": "git-cz",
+    "precommit": "git add .",
+    "commit": "npm run precommit && git-cz",
+    "cz": "git-cz",
     "changelog": "auto-changelog -p --template keepachangelog  --release-summary && git add CHANGELOG.md",
     "release": "dotenv -e .env -- semantic-release"
   },
@@ -55,7 +57,9 @@
   "dependencies": {
     "gradient-string": "^2.0.2",
     "jsome": "^2.5.0",
+    "lib": "^5.0.1",
     "pretty-error": "^4.0.0",
+    "requireindex": "^1.2.0",
     "typy": "^3.3.0",
     "winston": "^3.8.2"
   }
