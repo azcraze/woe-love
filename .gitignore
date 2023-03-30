@@ -252,3 +252,4 @@ lil/
 !.env.project
 !.env.vault
 .github/test.yaml
+src/scripts/buildDir.js
