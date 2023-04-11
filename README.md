@@ -15,13 +15,6 @@ command line tools.
 npm install woe-love --save
 ```
 
-## Tests
-
-```sh
-npm install
-npm test
-```
-
 ## Dependencies
 
 None
@@ -33,3 +26,8 @@ None
 ## License
 
 MIT
+
+### TODO
+
+- [ ] create undo functionality for score input
+- [ ] fix tests

@@ -1,0 +1,14 @@
+{
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "printWidth": 70,
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "rangeStart": 0
+      }
+    }
+  ]
+}

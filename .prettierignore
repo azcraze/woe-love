@@ -1,0 +1,7 @@
+cz-config.js
+.js
+.eslintrc.js
+lib/core/scoresHandler/addPlayerScores.js
+lib/core/scoresHandler/addScores.js
+lib/core/scoresHandler/removeScores.js
+lib/core/scoresHandler/removePlayerScores.js
