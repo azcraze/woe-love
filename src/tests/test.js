@@ -18,8 +18,6 @@ function rename() {
     "output.json"
   );
 
-
-
   let inputData = fs.readFileSync(inputPath);
 
   inputData = JSON.parse(inputData);
