@@ -7,9 +7,7 @@ require("dotenv").config();
 
 /* ------------- Packages ------------ */
 
-const {
-  core, err, filesystem, store 
-} = require("./lib");
+const { core, err, filesystem, store } = require("./lib");
 
 /* ------------------- Paths ------------------ */
 const PKG_ROOT = "./";

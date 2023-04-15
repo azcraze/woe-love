@@ -1,35 +1,37 @@
 // ../../../lib/utils/validateDate.test.js
 
-const { validateDate, getDateFormat } = require('../../../lib/utils/validateDate.js');
+const {
+  validateDate,
+  getDateFormat,
+} = require("../../../lib/utils/validateDate.js");
 
-describe('validateDate', () => {
-  test('should return true for a valid date', () => {
-    const date = 'Apr 3, 2023';
+describe("validateDate", () => {
+  test("should return true for a valid date", () => {
+    const date = "Apr 3, 2023";
 
     expect(validateDate(date)).toBe(true);
   });
 
-  test('should return false for an invalid date', () => {
-    const date = 'not a date';
+  test("should return false for an invalid date", () => {
+    const date = "not a date";
 
     expect(validateDate(date)).toBe(false);
   });
 });
 
-describe('getDateFormat', () => {
-  test('should return the correct format for a valid date', () => {
-    const date = 'Apr 3, 2023';
+describe("getDateFormat", () => {
+  test("should return the correct format for a valid date", () => {
+    const date = "Apr 3, 2023";
 
-    expect(getDateFormat(date)).toBe('MMM d, yyyy');
+    expect(getDateFormat(date)).toBe("MMM d, yyyy");
   });
 
-  test('should return null for an invalid date', () => {
-    const date = 'not a date';
+  test("should return null for an invalid date", () => {
+    const date = "not a date";
 
     expect(getDateFormat(date)).toBe(null);
   });
 });
-
 
 /* 
 const { log } = require('../../../lib/utils/consoleLog');
