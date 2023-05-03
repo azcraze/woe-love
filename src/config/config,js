@@ -1,0 +1,5 @@
+require('dotenv').config();
+
+module.exports = {
+  BASE_DIR: process.env.BASE_DIR
+};

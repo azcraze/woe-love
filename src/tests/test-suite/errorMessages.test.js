@@ -1,4 +1,6 @@
-const { errors, errMsg, errHelp } = require("../../../lib/err/errorMessages");
+const {
+  errors, errMsg, errHelp 
+} = require("../../../lib/err/errorMessages");
 
 describe("errors", () => {
   test("should have correct properties", () => {
