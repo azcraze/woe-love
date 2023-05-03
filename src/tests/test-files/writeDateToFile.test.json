@@ -1,0 +1,70 @@
+{
+  "settings": {
+    "setupStatus": 1,
+    "counters": {
+      "dateString": "May 4",
+      "dayOf": { "year": "124", "month": "04", "week": "04" },
+      "dayStamp": "05042022",
+      "month": "05",
+      "week": "18",
+      "year": "2022",
+      "date": "May 4, 2022"
+    },
+    "roles": {
+      "kcdRole": "",
+      "kcwRole": "",
+      "kcmRole": "",
+      "kcRole": "",
+      "rkdRole": "",
+      "rkwRole": "",
+      "rkmRole": "",
+      "rkRole": "",
+      "registeredRole": "",
+      "titleRole": "",
+      "skRoles": [""]
+    },
+    "channels": {
+      "scorekeeperCh": "",
+      "postCh": "",
+      "testCh": "",
+      "logsCh": ""
+    },
+    "playersArray": [
+      "pookie",
+      "pooktest",
+      "ahmad",
+      "smirly",
+      "zey",
+      "fie",
+      "maba",
+      "lost",
+      "penguin",
+      "takedo",
+      "hunty",
+      "rain",
+      "raptor",
+      "spxrky",
+      "fishie",
+      "devlish",
+      "steffy",
+      "musky",
+      "megaman",
+      "enjoy",
+      "arya",
+      "winggy",
+      "juice",
+      "cookie",
+      "agent",
+      "rebel",
+      "rx",
+      "umer",
+      "warrior",
+      "rarely",
+      "pandit",
+      "jazz",
+      "wookie",
+      "yym",
+      "deadly"
+    ]
+  }
+}

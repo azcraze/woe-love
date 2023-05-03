@@ -21,9 +21,9 @@
     "settings": {
       "paths": {
         "playerScoresDir": "./data/scorekeeping/playerRecords/",
-        "skVars": "./data/scorekeeping/816814079179358248/skVars.json",
-        "rkScores": "./data/scorekeeping/816814079179358248/rkScores.json",
-        "kcScores": "./data/scorekeeping/816814079179358248/kcScores.json"
+        "skVars": "/Users/home/code/custom modules/woe-love/src/tests/test-files/skVars.json",
+        "rkScores": "/Users/home/code/custom modules/woe-love/src/tests/test-files/rkScores.json",
+        "kcScores": "/Users/home/code/custom modules/woe-love/src/tests/test-files/kcScores.json"
       },
       "setupStatus": 2,
       "counters": {
