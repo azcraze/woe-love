@@ -1,0 +1,6 @@
+{
+  "editor.tabCompletion": "on",
+  "diffEditor.codeLens": true,
+  "directory-files.showFilePath": true,
+  "docify.translateService.targetLanguage": "English"
+}

@@ -254,7 +254,4 @@ lil/
 .github/test.yaml
 src/scripts/buildDir.js
 src/scripts/buildDirectory.js
-src/safe
-src/safe/kcScores.json
-src/safe/rkScores.json
 src/helpers.md
