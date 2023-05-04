@@ -1,86 +1,88 @@
-// test/filesystem.test.js
-
 const fs = require("fs");
-const {
-  readAndParseFile,
-} = require("../../../lib/filesystem/readAndParseJson");
+const { writeToFile, readAndParseFile } = require("../../../lib/filesystem");
 const { isValidJson } = require("../../../lib/filesystem/validateJson");
-const { writeToFile } = require("../../../lib/filesystem/writeStructuredJson");
-const { paths } = require("../../../lib/filesystem");
 
-const TEST_SERVER_ID = "816814079179358248";
+var TEST_PATH =
+  "/Users/home/code/custom modules/woe-love/src/tests/test-files/testWrite.json";
 
-describe("readAndParseJson", () => {
-  it("should return parsed JSON data from file if file is valid JSON", () => {
-    const expected = { foo: "bar" };
-    const filePath = `${__dirname}/test-files/valid.json`;
-    const actual = readAndParseFile(filePath);
+describe("writeToFile", () => {
+  it("should write data to file in expected format", () => {
+    // Arrange
+    const dataToWrite = {
+      hello: "world",
+    };
+    const filePath = TEST_PATH;
 
-    expect(actual).toEqual(expected);
+    // Act
+    writeToFile(dataToWrite, filePath, 1, 2);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+
+    // Assert
+    expect(JSON.parse(fileContents)).toEqual({
+      hello: "world",
+    });
+  });
+});
+
+TEST_PATH =
+  "/Users/home/code/custom modules/woe-love/src/tests/test-files/output.json";
+describe("readAndParseFile", () => {
+  test("returns data from a valid JSON file", () => {
+    const dataToWrite = { hello: "world" };
+    const expectedOutput = dataToWrite;
+
+    // Write data to file
+    fs.writeFileSync(TEST_PATH, JSON.stringify(dataToWrite));
+
+    // Read and parse data from file and compare with expected output
+    const dataFromFile = readAndParseFile(TEST_PATH);
+
+    expect(dataFromFile).toEqual(expectedOutput);
+
+    // Cleanup test file
+    fs.unlinkSync(TEST_PATH);
   });
 
-  it("should return false if file is not valid JSON", () => {
-    const filePath = `${__dirname}/test-files/invalid.json`;
-    const actual = readAndParseFile(filePath);
+  test("returns false for an invalid JSON file", () => {
+    // Write invalid data to file
+    fs.writeFileSync(TEST_PATH, "not a JSON file");
 
-    expect(actual).toBe(false);
+    // Attempt to read and parse data from file and expect false
+    const dataFromFile = readAndParseFile(TEST_PATH);
+
+    expect(dataFromFile).toBe(false);
+
+    // Cleanup test file
+    fs.unlinkSync(TEST_PATH);
   });
 });
 
 describe("isValidJson", () => {
-  it("should return true if file is valid JSON", () => {
-    const filePath = `${__dirname}/test-files/valid.json`;
-    const actual = isValidJson(filePath);
+  test("returns true for a valid JSON file", () => {
+    const dataToWrite = { hello: "world" };
 
-    expect(actual).toBe(true);
+    // Write valid data to file
+    fs.writeFileSync(TEST_PATH, JSON.stringify(dataToWrite));
+
+    // Check if file is valid JSON and expect true
+    const isValid = isValidJson(TEST_PATH);
+
+    expect(isValid).toBe(true);
+
+    // Cleanup test file
+    fs.unlinkSync(TEST_PATH);
   });
 
-  it("should return false if file is not valid JSON", () => {
-    const filePath = `${__dirname}/test-files/invalid.json`;
-    const actual = isValidJson(filePath);
+  test("returns false for an invalid JSON file", () => {
+    // Write invalid data to file
+    fs.writeFileSync(TEST_PATH, "not a JSON file");
 
-    expect(actual).toBe(false);
-  });
-});
+    // Check if file is valid JSON and expect false
+    const isValid = isValidJson(TEST_PATH);
 
-describe("writeStructuredJson", () => {
-  it("should write formatted JSON data to file", () => {
-    const dataToWrite = { foo: "bar" };
-    const filePath = `${__dirname}/test-files/output.json`;
+    expect(isValid).toBe(false);
 
-    writeToFile(dataToWrite, filePath);
-    const fileContents = fs.readFileSync(filePath, "utf8");
-
-    expect(fileContents).toMatchSnapshot();
-  });
-});
-
-describe("paths", () => {
-  it("should return the correct path for SK_VARS", () => {
-    const expected = `${process.cwd()}/data/scorekeeping/${TEST_SERVER_ID}/skVars.json`;
-    const actual = paths.SK_VARS(TEST_SERVER_ID);
-
-    expect(actual).toEqual(expected);
-  });
-
-  it("should return the correct path for RK_SCORES", () => {
-    const expected = `${process.cwd()}/data/scorekeeping/${TEST_SERVER_ID}/rkScores.json`;
-    const actual = paths.RK_SCORES(TEST_SERVER_ID);
-
-    expect(actual).toEqual(expected);
-  });
-
-  it("should return the correct path for MEMBER_INFO", () => {
-    const expected = `${process.cwd()}/data/memberInfo.json`;
-    const actual = paths.MEMBER_INFO;
-
-    expect(actual).toEqual(expected);
-  });
-
-  it("should return the correct path for GLOBAL_VARS", () => {
-    const expected = `${process.cwd()}data/storedVariables.json`;
-    const actual = paths.GLOBAL_VARS;
-
-    expect(actual).toEqual(expected);
+    // Cleanup test file
+    fs.unlinkSync(TEST_PATH);
   });
 });

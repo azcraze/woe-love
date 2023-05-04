@@ -88,7 +88,7 @@ module.exports = {
     "no-ex-assign": ["error"],
     "no-extra-boolean-cast": ["error"],
     "no-extra-semi": ["error"],
-    "no-fallthrough": ["error"],
+    "no-fallthrough": [ "error", { "allowEmptyCase": true }],
     "no-func-assign": ["error"],
     "no-inner-declarations": ["error"],
     "no-irregular-whitespace": ["error"],

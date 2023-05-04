@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-const { check } = require("./../../../lib/core/input");
+const { check } = require("../../../lib/core/input");
 const { date } = require("../../../lib/utils");
-const { addToInputLog } = require("./../../../lib/core/inputLogs");
+const { addToInputLog } = require("../../../lib/core/inputLogs");
 const {
   removePlayerScores,
   addPlayerScores,
@@ -16,7 +16,7 @@ const { isValidJson } = require("../../../lib/filesystem/validateJson");
 const {
   readAndParseFile,
 } = require("../../../lib/filesystem/readAndParseJson");
-const { paths } = require("../../filesystem");
+const { paths } = require("./../../../lib/filesystem/paths.test");
 const { SERVER_ID, TEST_NAME } = require("./../test-values");
 
 /* //////////////////////////////////////////// */
@@ -24,8 +24,7 @@ const { SERVER_ID, TEST_NAME } = require("./../test-values");
 /* //////////////////////////////////////////// */
 
 /* ------------------- Paths ------------------ */
-let skVarsPath = paths.SK_VARS(SERVER_ID);
-const path = `${cwd()}/src/tests/test-files/kcScores.json`;
+let skVarsPath = paths.SK_VARS();
 const playerPath = `${cwd()}/src/tests/test-files/test-records.json`;
 
 /* ------------------ Values ------------------ */

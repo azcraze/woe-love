@@ -1,16 +1,8 @@
-
 [diff]
-        tool = difftastic
-
-[difftool]
-        prompt = false
-
-[difftool "difftastic"]
-        cmd = difft "$LOCAL" "$REMOTE"
-        # Use a pager for large output, just like other git commands.
-[pager]
-        difftool = true
-
-# `git dft` is less to type than `git difftool`.
-[alias]
-        dft = difftool
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = code
+[mergetool "code"]
+  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
