@@ -64,7 +64,8 @@
     "relative": "^3.0.2",
     "requireindex": "^1.2.0",
     "typy": "^3.3.0",
-    "winston": "^3.8.2"
+    "winston": "^3.8.2",
+    "woe-love": "^1.0.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
