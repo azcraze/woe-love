@@ -10,7 +10,7 @@
   "author": "azcraze",
   "main": "index.js",
   "scripts": {
-    "changelog": "auto-changelog -p --template keepachangelog  --release-summary && git add CHANGELOG.md",
+    "changelog": "auto-changelog -p --template keepachangelog  --release-summary && git add CHANGELOG.md && git commit -m 'changelog'",
     "precommit": "npx prettier --write . && git add .",
     "commit": "npm run precommit && git-cz",
     "cz": "git-cz",
