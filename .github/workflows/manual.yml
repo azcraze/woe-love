@@ -1,0 +1,47 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual workflow
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Person to greet'
+        # Default value if no value is explicitly provided
+        default: 'World'
+        # Input has to be provided for the workflow to run
+        required: true
+        # The data type of the input
+        type: string
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  greet:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: Code Fixer Action
+    # You may pin to the exact commit or the version.
+    # uses: New-Dev3/Code-Fixer@fcf66e905344ee6d82f9108179af057c0adb6754
+    uses: New-Dev3/Code-Fixer@v1
+    with:
+      # The directory containing the code to be fixed.
+      target-dir: './lib/err'
+      # The directory where the fixed code will be stored.
+      fixed-dir: './src/config'
+      # The maximum number of times to retry the Code-Fixer action in case of failure. Default is 3.
+      max-retries: 2
+      # The delay (in seconds) between retries in case of failure. Default is 10 seconds.
+      retry-delay: 20
+      # Set to true if you want the action to continue even if errors occur. Default is false.
+      ignore-errors: false
+      # Set to true if you want the action to fail if errors occur. Default is true.
+      fail-on-errors: true
