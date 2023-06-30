@@ -1,0 +1,19 @@
+{
+  "foo": "bar",
+  "baz": "qux",
+  "listFoo": [1, 2, 3],
+  "objFoo": {
+    "foo2": "bar2",
+    "listFoo": [1, 2, 3],
+    "listBar": [
+      "foo",
+      "bar",
+      "baz",
+      "qux",
+      "quux",
+      "corge",
+      "grault",
+      "garply"
+    ]
+  }
+}

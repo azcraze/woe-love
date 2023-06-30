@@ -99,7 +99,6 @@ module.exports = {
     "no-nonoctal-decimal-escape": ["error"],
     "no-obj-calls": ["error"],
     "no-octal": ["error"],
-    "no-prototype-builtins": ["error"],
     "no-redeclare": ["error"],
     "no-regex-spaces": ["error"],
     "no-self-assign": ["error"],
