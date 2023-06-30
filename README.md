@@ -1,7 +1,5 @@
 # Project Title
 
-
-
 A brief description of what this project does and who it's for
 
 ## Badges
@@ -25,8 +23,6 @@ Install my-project with npm
 ## Documentation
 
 WIP
-
-
 
 ## Dependencies
 
@@ -96,11 +92,48 @@ To run tests, run the following command
   npm run test
 ```
 
-
-
 ## Roadmap
 
 - [ ] create undo functionality for score input
 - [x] fix tests
 - [ ] Complete leaderboard commands
 - [ ] Player profile commands
+
+# tests
+
+- [test-files/](./tests/test-files)
+  - [addScores.json](./tests/test-files/addScores.json)
+  - [kcScores.json](./tests/test-files/kcScores.json)
+  - [kcScoresOfficial.json](./tests/test-files/kcScoresOfficial.json)
+  - [logs.json](./tests/test-files/logs.json)
+  - [rkScores.json](./tests/test-files/rkScores.json)
+  - [skVars.json](./tests/test-files/skVars.json)
+  - [skVars.test.json](./tests/test-files/skVars.test.json)
+  - [storedVariables.json](./tests/test-files/storedVariables.json)
+  - [test-records.json](./tests/test-files/test-records.json)
+  - [writeDateToFile.test.json](./tests/test-files/writeDateToFile.test.json)
+- [test-suite/](./tests/test-suite)
+  - [date.tests/](./tests/test-suite/date.tests)
+    - [adjustDate.test.js](./tests/test-suite/date.tests/adjustDate.test.js)
+    - [currentDate.test.js](./tests/test-suite/date.tests/currentDate.test.js)
+    - [otherDateFunctions.test.js](./tests/test-suite/date.tests/otherDateFunctions.test.js)
+    - [validateDate.test.js](./tests/test-suite/date.tests/validateDate.test.js)
+  - [errorMessages.test.js](./tests/test-suite/errorMessages.test.js)
+  - [filesystem.test.js](./tests/test-suite/filesystem.test.js)
+  - [readParse.test.js](./tests/test-suite/readParse.test.js)
+  - [test.js](./tests/test-suite/test.js)
+  - [typeChecking.test.js](./tests/test-suite/typeChecking.test.js)
+  - [utils.test.js](./tests/test-suite/utils.test.js)
+  - [writeToFile.test.js](./tests/test-suite/writeToFile.test.js)
+- [~/](./tests/~)
+  - [.dotfiles/](./tests/~/.dotfiles)
+- [addScores.js](./tests/addScores.js)
+- [formatAndSortScoresTest.js](./tests/formatAndSortScoresTest.js)
+- [generateTable.test.js](./tests/generateTable.test.js)
+- [getPlayerScoresArrayTest.js](./tests/getPlayerScoresArrayTest.js)
+- [getScoresArrayTest.js](./tests/getScoresArrayTest.js)
+- [madKiller.js](./tests/madKiller.js)
+- [playerScoresDataTest.js](./tests/playerScoresDataTest.js)
+- [restructure.js](./tests/restructure.js)
+- [test-values.js](./tests/test-values.js)
+- [test.js](./tests/test.js)
