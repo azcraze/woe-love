@@ -9,6 +9,14 @@
   "license": "MIT",
   "author": "azcraze",
   "main": "index.js",
+  "files": [
+    "README.md",
+    ".gitignore",
+    "package-lock.json"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
     "changelog": "auto-changelog -p --template keepachangelog  --release-summary && git add CHANGELOG.md && git commit -m 'changelog'",
     "precommit": "npx prettier --write . && git add .",
