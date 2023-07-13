@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 /**
  * Generates an index of all modules in a given directory.
@@ -11,8 +11,8 @@ const path = require('path');
  */
 function generateModuleIndex(directory) {
   // Check that the directory parameter is a string
-  if ('string' !== typeof directory) {
-    throw new TypeError('Directory must be a string');
+  if ("string" !== typeof directory) {
+    throw new TypeError("Directory must be a string");
   }
 
   try {
@@ -30,21 +30,21 @@ function generateModuleIndex(directory) {
     const index = {};
 
     // Filter for files with a .js extension and require them to get their exports
-    files.filter(file => '.js' === path.extname(file))
-      .forEach(file => {
+    files
+      .filter((file) => ".js" === path.extname(file))
+      .forEach((file) => {
         const moduleName = path.parse(file).name;
         const modulePath = path.join(directory, file);
         const module = require(modulePath);
 
         // Only add modules that export an object to the index
-        if ('object' === typeof module) {
+        if ("object" === typeof module) {
           index[moduleName] = module;
         }
       });
-    console.log(index)
+    console.log(index);
     // Return the generated module index
     return index;
-
   } catch (err) {
     console.error(err);
     throw err;
@@ -53,11 +53,10 @@ function generateModuleIndex(directory) {
 
 // Export the generateModuleIndex function
 module.exports = {
-  generateModuleIndex
+  generateModuleIndex,
 };
 
-
-let dirPath ='/Users/home/code/custom modules/woe-love/lib/utils'
+let dirPath = "/Users/home/code/custom modules/woe-love/lib/utils";
 
 // Call the function with a directory path to generate the module index
 generateModuleIndex(dirPath);

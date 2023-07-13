@@ -255,3 +255,9 @@ lil/
 src/scripts/buildDir.js
 src/scripts/buildDirectory.js
 src/helpers.md
+lib/utils/package-creator/temp
+lib/utils/package-creator/temp/checkargs.js
+lib/utils/package-creator/temp/jsontools.js
+src/hello.js
+lib/utils/package-creator/package-creator/config.js
+lib/utils/package-creator/package-creator/.env
