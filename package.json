@@ -1,6 +1,6 @@
 {
   "name": "woe-love",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "custom person module",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
     "commit": "git-cz",
     "dev": "nodemon --exec \"npm run lint\"",
     "lint": "npx prettier --write . && eslint --fix .",
-    "release": "semantic-release",
+    "release": "git flow release finish 'release' && np",
     "test": "npx majestic"
   },
   "husky": {
