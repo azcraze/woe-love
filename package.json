@@ -1,7 +1,7 @@
 {
   "name": "woe-love",
-  "description": "custom person module",
-  "version": "0.0.1",
+  "description": "custom personal module",
+  "version": "0.0.3",
   "author": "azcraze",
   "dependencies": {
     "1-liners": "^0.4.2",
