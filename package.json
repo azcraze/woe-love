@@ -12,7 +12,7 @@
     "cz": "git-cz",
     "changelog": "auto-changelog -p --template keepachangelog  --release-summary && git add CHANGELOG.md",
     "release": "dotenv -e .env -- semantic-release",
-    "dev": "nodemon --exec \"npm run lint\"
+    "dev": "nodemon --exec \"npm run lint\""
   },
   "release": {
     "path": "./releaserc.js",
