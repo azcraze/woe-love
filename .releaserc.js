@@ -8,7 +8,7 @@ const template = fs.readFileSync(path.join(TEMPLATE_DIR, "default-template.hbs")
 const commitTemplate = fs.readFileSync(path.join(TEMPLATE_DIR, "commit-template.hbs"), 'utf8');
 
 module.exports = {
-  branches: ["main", "develop"], // Corrected the typo here from 'devleop' to 'develop'
+  branches: ["main", "develop"],
   plugins: [
     [
       "semantic-release-gitmoji",
