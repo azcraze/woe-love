@@ -4,9 +4,7 @@ require("dotenv").config();
 
 /* ------------- Packages ------------ */
 
-const {
-  core, filesystem, utils 
-} = require("./lib");
+const { core, filesystem, utils } = require("./lib");
 const fs = filesystem;
 
 /* ------------------- Paths ------------------ */

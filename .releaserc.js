@@ -9,7 +9,7 @@ const TEMPLATE_DIR = "./node_modules/semantic-release-gitmoji";
 // the *.hbs template and partials should be passed as strings of contents
 const template = readFileAsync(path.join(TEMPLATE_DIR, "default-template.hbs"));
 const commitTemplate = readFileAsync(
-  path.join(TEMPLATE_DIR, "commit-template.hbs")
+  path.join(TEMPLATE_DIR, "commit-template.hbs"),
 );
 
 module.exports = {

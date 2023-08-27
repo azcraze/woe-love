@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - main  # Change this to your default branch if it's not "main"
+      - main # Change this to your default branch if it's not "main"
 
 jobs:
   release:
@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'  # Use your desired Node version
+          node-version: "14.x" # Use your desired Node version
 
       - name: Install Dependencies
         run: npm install
