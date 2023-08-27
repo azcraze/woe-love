@@ -1,0 +1,104 @@
+{
+  "816814079179358248": {
+    "serverName": "colors",
+    "serverID": 17748389199103986000,
+    "roles": {
+      "staff": [
+        816814079254855700, 816814079254855700, 830251227811545100
+      ],
+      "moderator": [816814079254855700],
+      "scorekeeper": [950498896197595100],
+      "member": [855638262856548400, 816814079242797000]
+    },
+    "scorekeeping": {
+      "players": ["pookie", "zey", "fie", "mamba"],
+      "playerIDs": [
+        560658014202363942, 883735210401886239, 939354374017269800,
+        756457458578227301
+      ]
+    },
+    "dayStampWkArray": [],
+    "settings": {
+      "paths": {
+        "playerScoresDir": "./data/scorekeeping/playerRecords/",
+        "skVars": "/Users/home/code/custom modules/woe-love/src/tests/test-files/skVars.json",
+        "rkScores": "/Users/home/code/custom modules/woe-love/src/tests/test-files/rkScores.json",
+        "kcScores": "/Users/home/code/custom modules/woe-love/src/tests/test-files/kcScores.json"
+      },
+      "setupStatus": 2,
+      "counters": {
+        "dayStamp": "12152022",
+        "thisyear": 2022,
+        "thismonth": 12,
+        "thisweek": 51,
+        "thisday": 15,
+        "doty": 349,
+        "dotw": 4,
+        "unixStamp": 1671084000,
+        "dateString": "Dec 15"
+      }
+    }
+  },
+  "893313929097396234": {
+    "serverName": "Affliction",
+    "serverID": 17748389199103986000,
+    "roles": {
+      "staff": [
+        816814079254855700, 816814079254855700, 830251227811545100
+      ],
+      "moderator": [816814079254855700],
+      "scorekeeper": [950498896197595100],
+      "member": [855638262856548400, 816814079242797000]
+    },
+    "settings": {
+      "paths": {
+        "playerScoresDir": "./data/scorekeeping/playerRecords/",
+        "rk": "./data/scorekeeping/893313929097396234/rkscores.json",
+        "kc": "./data/scorekeeping/893313929097396234/kcScores.json",
+        "leaderboards": "./data/scorekeeping/893313929097396234/leaderbaords.json",
+        "rkScores": "./data/scorekeeping/893313929097396234/rkScores.json",
+        "kcRecords": "./data/scorekeeping/893313929097396234/kcrecordsjson"
+      },
+      "setupStatus": 2,
+      "counters": {
+        "dayStamp": "12152022",
+        "thisyear": 2022,
+        "thismonth": 12,
+        "thisweek": 51,
+        "thisday": 15,
+        "doty": 349,
+        "dotw": 4,
+        "unixStamp": 1671084000,
+        "dateString": "Dec 15"
+      }
+    }
+  },
+  "952122158321139733": {
+    "serverName": "progress",
+    "serverID": 17748389199103986000,
+    "roles": {
+      "staff": [816814079254855700],
+      "moderator": []
+    },
+    "settings": {
+      "paths": {
+        "playerScoresDir": "./data/scorekeeping/playerRecords/",
+        "skVars": "./data/scorekeeping/952122158321139733/skVars.json",
+        "rkScores": "./data/scorekeeping/952122158321139733/rkScores.json",
+        "kcScores": "./data/scorekeeping/952122158321139733/kcScores.json"
+      },
+      "setupStatus": 1,
+      "counters": {
+        "dayStamp": "12152022",
+        "thisyear": 2022,
+        "thismonth": 12,
+        "thisweek": 51,
+        "thisday": 15,
+        "doty": 349,
+        "dotw": 4,
+        "unixStamp": 1671084000,
+        "dateString": "Dec 15"
+      }
+    }
+  }
+}

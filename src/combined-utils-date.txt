@@ -1,0 +1,171 @@
+
+
+// lib/utils/date/adjustDate.js
+
+
+/* ------------------ Imports ----------------- */
+const { DateTime } = require("luxon");
+// const { getDateValues } = require('./currentDateValues');
+const { validateDate, getDateFormat } = require("./validateDate");
+
+function newDate(dateValue) {
+  if (false === validateDate(dateValue)) {
+    return false;
+  }
+  const format = getDateFormat(dateValue);
+
+  function dateFormatting(dateInput) {
+    const dt = DateTime.fromFormat(dateInput, format);
+    const dateString = dt.toFormat("MMM d");
+    const dayOfYear = dt.toFormat("ooo");
+    const dayOfMonth = dt.toFormat("dd");
+    const month = dt.toFormat("MM");
+    const week = dt.toFormat("W");
+    const year = dt.toFormat("yyyy");
+    const date = dt.toFormat("DDD");
+    const stamp = dt.toFormat(`${month}${dayOfMonth}${year}`);
+
+    var dayOfWeek = dt.toFormat("E");
+
+    console.log(dayOfWeek);
+    dayOfWeek = (parseInt(dayOfWeek) + 1).toString().padStart(2, "0");
+
+    return {
+      dateString: dateString,
+      dayOf: {
+        year: dayOfYear,
+        month: dayOfMonth,
+        week: dayOfWeek,
+      },
+      dayStamp: stamp,
+      month: month,
+      week: week,
+      year: year,
+      date: date,
+    };
+  }
+  return dateFormatting(dateValue);
+}
+/* ------------------ Exports ----------------- */
+module.exports = {
+  newDate,
+};
+
+
+// lib/utils/date/currentDateValues.js
+
+
+const { readAndParseFile } = require("../../filesystem");
+
+function getDateValues(path) {
+  let data = readAndParseFile(path);
+
+  console.log(`PATH:${path}`);
+  console.log(`DATA:${data}`);
+  let values = data.settings.counters;
+
+  let dateObj = {
+    dayStamp: values.dayStamp,
+    doy: values.day.year,
+    dom: values.day.month,
+    dow: values.day.week,
+    week: values.week,
+    month: values.month,
+    year: values.year,
+    dateString: values.dateString,
+    date: values.date,
+  };
+
+  return dateObj;
+}
+
+
+module.exports = {
+  getDateValues,
+};
+
+
+// lib/utils/date/index.js
+
+
+/* ------------------ Imports ----------------- */
+const dateMath = require("./addDay");
+
+/* ------------------ Exports ----------------- */
+module.exports = {
+  date: {
+    current: require("./currentDateValues").getDateValues,
+    new: require("./adjustDate").newDate,
+    add: dateMath.addDay,
+    subtract: dateMath.subtractDay,
+    set: require("./setDate.js").writeDateToFile,
+  },
+};
+
+
+// lib/utils/date/setDate.js
+
+const { readAndParseFile, writeToFile } = require("../../filesystem");
+const date = require("../index").date;
+
+function writeDateToFile(path, inputDate) {
+  let data = readAndParseFile(path);
+
+  console.log(date.new(inputDate));
+  data.settings.counters = date.new(inputDate);
+
+  writeToFile(data, path, 3, 2);
+  console.log(data);
+  return data;
+}
+
+module.exports = {
+  writeDateToFile,
+};
+
+
+
+// lib/utils/date/validateDate.js
+
+const { DateTime } = require("luxon");
+
+const formats = [
+  "MMM dd, yyyy",
+  "dd MMM yyyy",
+  "d MMM yyyy",
+  "MMM d, yyyy",
+  "MMMM dd, yyyy",
+  "MMMM d, yyyy",
+  "MMddyyyy",
+];
+
+const validateDate = (dateString) => {
+  for (const format of formats) {
+    const date = DateTime.fromFormat(dateString, format);
+
+    if (date.isValid) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
+const getDateFormat = (dateString) => {
+  for (const format of formats) {
+    const date = DateTime.fromFormat(dateString, format);
+
+    if (date.isValid) {
+      return format;
+    }
+  }
+  return null;
+};
+
+
+
+module.exports = {
+  validateDate,
+  getDateFormat,
+};
+

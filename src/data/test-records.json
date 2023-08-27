@@ -1,0 +1,58 @@
+{
+  "LbsID": 0,
+  "dayStamp": "01052023",
+  "entries": {
+    "03312023": {
+      "kc": [26, 21, 47]
+    },
+    "04012023": {
+      "kc": [12, 7, 19]
+    },
+    "04022023": {
+      "kc": [45, 27, 72]
+    },
+    "04222023": {
+      "rk": [20, 35, 55]
+    },
+    "04132023": {}
+  },
+  "totals": {
+    "kc": [93, 70, 163],
+    "rk": [0, 0, 0]
+  },
+  "discID": 933255435291598800,
+  "highRankLbs": 0,
+  "highRankNoFeed": 0,
+  "highRating": "",
+  "highRecords": {
+    "dayRk": 0,
+    "dayTotal": 0,
+    "dayKills": 0,
+    "weekRk": 0,
+    "weekTotal": 0,
+    "weekKills": 0,
+    "monthRk": 0,
+    "monthTotal": 0,
+    "monthKills": 0
+  },
+  "lbName": "umer",
+  "locale": "en-US",
+  "platform": [],
+  "registeredDate": "January 5, 2023",
+  "servers": {
+    "usual": "",
+    "occasional": ""
+  },
+  "skin": "",
+  "style": "",
+  "tips": "",
+  "titles": [],
+  "titlesHeld": {
+    "rkd": 0,
+    "rkw": 0,
+    "rkm": 0,
+    "kcd": 0,
+    "kcw": 0,
+    "kcm": 0
+  }
+}

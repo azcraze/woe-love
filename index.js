@@ -1,19 +1,13 @@
 /* --------------- Pretty Errors -------------- */
-const PrettyError = require("pretty-error");
-const pe = new PrettyError();
 
-require("requireindex");
 require("dotenv").config();
 
 /* ------------- Packages ------------ */
 
-const {
-  core, err, filesystem, store 
-} = require("./lib");
+const { core, filesystem, utils } = require("./lib");
+const fs = filesystem;
 
 /* ------------------- Paths ------------------ */
-const PKG_ROOT = "./";
-const PKG_ENTRY = "./index";
 
 /* ------------------- Misc ------------------- */
 
@@ -24,17 +18,30 @@ const duck = `  __
 `;
 
 module.exports = {
-  duck,
-  PKG_ROOT,
-  PKG_ENTRY,
-  log: err.log,
-  logger: err.logger,
-  errors: err.errors,
-  is: err.is,
+  duck: duck,
+  scores: core.scores,
+  lb: core.lb,
   check: core.check,
-  addScores: core.addScores,
-  removeScores: core.removeScores,
-  argCount: core.argCount,
-  sanitize: core.sanitize,
-  writeToFile: filesystem.writeToFile,
+  logs: core.logs,
+  get: core.get,
+  error: require("./lib/err").error,
+  is: require("./lib/err").is,
+  logger: require("./lib/err").logger,
+  pe: require("./lib/err").pe,
+  store: require("./lib/store"),
+  date: utils.date,
+  sani: {
+    split: {
+      space: utils.split.space,
+      comma: utils.split.comma,
+      dash: utils.split.dash,
+    },
+  },
+  log: utils.log,
+  paths: fs.paths,
+  testPaths: fs.testPaths,
+  _fs: {
+    write: fs.writeToFile,
+    parse: fs.readAndParseFile,
+  },
 };
