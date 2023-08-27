@@ -1,21 +1,4 @@
 {
-  "inputLog": [
-    ["pooktest 1 1"],
-    ["IM # 16"],
-    ["IM # 15"],
-    ["pooktest 1 1"],
-    ["test 5 65"],
-    ["pandit 100 126"],
-    ["pooktest 1 1"],
-    ["test 5 65"],
-    ["pandit 100 126"],
-    ["pooktest 1 1"],
-    ["test 5 65"],
-    ["pandit 100 126"],
-    ["pooktest 1 1"],
-    ["IM # 16"],
-    ["IM # 15"]
-  ],
   "dayLogs": {
     "04122023": {
       "pookie": [485, 827, 1312],
