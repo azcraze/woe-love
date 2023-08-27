@@ -1,6 +1,6 @@
 {
   "name": "woe-love",
-  "version": "1.0.0",
+  "version": "0.0.0-semantically-released",
   "description": "custom person module",
   "repository": {
     "type": "git",
@@ -10,26 +10,17 @@
   "author": "azcraze",
   "main": "index.js",
   "scripts": {
-    "changelog": "auto-changelog -p --template keepachangelog  --release-summary && git add CHANGELOG.md && git commit -m 'changelog'",
-    "precommit": "npx prettier --write . && git add .",
-    "commit": "npm run precommit && git-cz",
-    "cz": "git-cz",
+    "changelog": "auto-changelog -p --template keepachangelog  --release-summary",
+    "precommit": "npx prettier --write .",
+    "commit": "git-cz",
     "dev": "nodemon --exec \"npm run lint\"",
     "lint": "npx prettier --write . && eslint --fix .",
-    "lint:full": "npx prettier --write . && npx eslint-interactive ./",
-    "release": "dotenv -e .env -- semantic-release",
+    "release": "semantic-release",
     "test": "npx majestic"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npx semantic-release --dry-run && git add CHANGELOG.md package.json"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-git",
-      "useEmoji": false,
-      "czConfig": "./.cz-config.js"
+      "pre-commit": "npm run lint && git add ."
     }
   },
   "release": {
@@ -37,14 +28,12 @@
       "main",
       "develop"
     ],
-    "path": "./releaserc.js",
     "plugins": [
-      [
-        "@semantic-release/changelog",
-        {
-          "changelogFile": "CHANGELOG.md"
-        }
-      ]
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/github"
     ]
   },
   "dependencies": {
@@ -77,6 +66,10 @@
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^10.0.2",
+    "@semantic-release/github": "^9.0.4",
+    "@semantic-release/npm": "^10.0.5",
+    "@semantic-release/release-notes-generator": "^11.0.5",
     "ajv": "^8.12.0",
     "auto-changelog": "^2.4.0",
     "commitizen": "^4.3.0",
