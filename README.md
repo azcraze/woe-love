@@ -54,21 +54,6 @@ Clone the project
 
 Go to the project directory
 
-```bash
-  cd woe-love
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
 
 ## Dev Dependencies
 
