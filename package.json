@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/azcraze/woe-love.git"
   },
+  "engines": {
+    "node": ">=20.5.0"
+  },
   "license": "MIT",
   "author": "azcraze",
   "main": "index.js",
