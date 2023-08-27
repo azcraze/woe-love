@@ -1,24 +1,17 @@
-// in ".releaserc.js" or "release.config.js"
-
-const { promisify } = require("util");
+const fs = require("fs");
+const path = require("path");
 const dateFormat = require("dateformat");
-const readFileAsync = promisify(require("fs").readFile);
 
-// Given a `const` variable `TEMPLATE_DIR` which points to "<semantic-release-gitmoji>/lib/assets/templates"
-const TEMPLATE_DIR = "./node_modules/semantic-release-gitmoji";
-// the *.hbs template and partials should be passed as strings of contents
-const template = readFileAsync(path.join(TEMPLATE_DIR, "default-template.hbs"));
-const commitTemplate = readFileAsync(
-  path.join(TEMPLATE_DIR, "commit-template.hbs")
-);
+const TEMPLATE_DIR = "./node_modules/semantic-release-gitmoji/lib/assets/templates";
+
+const template = fs.readFileSync(path.join(TEMPLATE_DIR, "default-template.hbs"), 'utf8');
+const commitTemplate = fs.readFileSync(path.join(TEMPLATE_DIR, "commit-template.hbs"), 'utf8');
 
 module.exports = {
-  branches: ["main", "devleop"],
+  branches: ["main", "develop"], // Corrected the typo here from 'devleop' to 'develop'
   plugins: [
     [
       "semantic-release-gitmoji",
-      "@semantic-release/changelog",
-      { changelogFile: "CHANGELOG.md" },
       {
         releaseRules: {
           major: [":boom:"],
@@ -43,6 +36,7 @@ module.exports = {
         },
       },
     ],
+    ["@semantic-release/changelog", { changelogFile: "CHANGELOG.md" }],
     "@semantic-release/github",
     "@semantic-release/npm",
   ],
